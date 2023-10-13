@@ -26,13 +26,13 @@ bool TraversalHomomorphismCounter::CheckHomomorphism(std::shared_ptr<EdgeSetGrap
     return true;
 }
 
-long TraversalHomomorphismCounter::Count(std::shared_ptr<EdgeSetGraph> h, std::shared_ptr<EdgeSetGraph> g) {
+int64_t TraversalHomomorphismCounter::Count(std::shared_ptr<EdgeSetGraph> h, std::shared_ptr<EdgeSetGraph> g) {
     long result = TestKTraversals(h, g, GetFirstTraversal(h), std::vector<size_t>());
     
     return result;
 }
 
-long TraversalHomomorphismCounter::TestKTraversals(std::shared_ptr<EdgeSetGraph> h, std::shared_ptr<EdgeSetGraph> g, std::vector<size_t> hTraversal, std::vector<size_t> gTraversal)
+int64_t TraversalHomomorphismCounter::TestKTraversals(std::shared_ptr<EdgeSetGraph> h, std::shared_ptr<EdgeSetGraph> g, std::vector<size_t> hTraversal, std::vector<size_t> gTraversal)
 {
     //These choices contain the open neighbourhood
     std::unordered_set<size_t> choices;
